@@ -1,0 +1,14 @@
+<div class="center jumbotron">
+ <%= link_to image_tag("edum.png", alt: "Edumax logo",  :align=> "middle", :size=> '200x200' ),
+            'http://edumax.org.ro/'%>
+
+  <h1>Welcome to Edumax</h1>
+
+  <h2>
+    This is the home page for 
+    <a href="http://www.edumax.org.ro/">Edumax</a>
+  </h2>
+
+  <%= link_to "Sign up now!", {:controller => 'users', :action => 'new'}, class: "btn btn-lg btn-primary" %>
+</div>
+
