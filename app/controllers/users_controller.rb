@@ -10,9 +10,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
+      log_in @user
+      flash[:success] = "Welcome to the Sample App!"
       # Handle a successful save.
       redirect_to(:controller => 'static_pages', :action => 'home')
     else
+      flash[:danger] = 'Invalid email/password combination' # Not quite right!
       render 'new'
     end
   end
